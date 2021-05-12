@@ -10,13 +10,13 @@
             "$ref": "x-vpc.spec.json"
         },
         "x-tags": {
-            "type": [
-                "array",
-                "object"
-            ]
+            "$ref": "x-tags.spec.json"
         },
         "x-dns": {
-            "type": "object"
+            "$ref": "x-dns.spec.json"
+        },
+        "x-cluster": {
+            "$ref": "x-ecs.spec.json"
         },
         "version": {
             "type": "string",
@@ -1282,6 +1282,9 @@
                 "null"
             ],
             "properties": {
+                "x-efs": {
+                    "$ref": "x-efs.spec.json"
+                },
                 "name": {
                     "type": "string"
                 },

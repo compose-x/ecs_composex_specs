@@ -228,7 +228,10 @@ services:
       UseCloudmap: True
 
 volumes:
-  shared-images: { }
+  shared-images:
+    x-efs:
+      MacroParameters:
+        EnforceIamAuth: True
   some-volume: { }
   normal-vol: { }
 

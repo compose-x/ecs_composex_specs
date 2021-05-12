@@ -72,10 +72,8 @@ def test_x_vpc_create():
         f"{path.abspath(path.dirname(__file__))}/x_vpc/create.yml", "r"
     ) as content_fd:
         content = yaml.load(content_fd.read(), Loader=Loader)
-    print(content)
 
     source = files("ecs_composex_specs").joinpath("x-vpc.spec.json")
-    print(source)
     resolver = jsonschema.RefResolver(
         f"file://{path.abspath(path.dirname(source))}/", None
     )
@@ -96,10 +94,8 @@ def test_x_vpc_use():
         f"{path.abspath(path.dirname(__file__))}/x_vpc/use.yml", "r"
     ) as content_fd:
         content = yaml.load(content_fd.read(), Loader=Loader)
-    print(content)
 
     source = files("ecs_composex_specs").joinpath("x-vpc.spec.json")
-    print(source)
     resolver = jsonschema.RefResolver(
         f"file://{path.abspath(path.dirname(source))}/", None
     )
