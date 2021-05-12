@@ -25,11 +25,19 @@
         "Services": {
             "type": "array",
             "items": {
-                "type": "string"
+                "$ref": "#/definitions/Service"
             }
         }
     },
     "definitions": {
+        "Service": {
+            "type": "object",
+            "properties": {
+                "Name": {
+                    "type": "string"
+                }
+            }
+        },
         "AwsSource": {
             "type": "object",
             "additionalProperties": false,

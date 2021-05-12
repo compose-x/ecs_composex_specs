@@ -65,19 +65,17 @@
     },
     "properties": {
         "PrivateNamespace": {
-            "Lookup": {
-                "type": "object",
-                "$ref": "#/definitions/PrivateNamespace"
-            },
-            "PublicZone": {
-                "type": "object",
-                "$ref": "#/definitions/PublicZone"
-            },
-            "Records": {
-                "type": "array",
-                "items": {
-                    "$ref": "#/definitions/Record"
-                }
+            "type": "object",
+            "$ref": "#/definitions/PrivateNamespace"
+        },
+        "PublicZone": {
+            "type": "object",
+            "$ref": "#/definitions/PublicZone"
+        },
+        "Records": {
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/Record"
             }
         }
     },

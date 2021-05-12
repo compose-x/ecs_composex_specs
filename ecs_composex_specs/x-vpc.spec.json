@@ -126,6 +126,12 @@
                             }
                         }
                     }
+                },
+                "EnableFlowLogs": {
+                    "type": "boolean"
+                },
+                "FlowLogsRoleBoundary": {
+                    "type": "string"
                 }
             }
         }
