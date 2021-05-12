@@ -6,6 +6,18 @@
     "description": "Compose specification from compose-spec with added specifications for ECS Compose-X",
     "$comment": "Compose specification from compose-spec with added specifications for ECS Compose-X. Source gh:from compose-spec/compose-spec/schema",
     "properties": {
+        "x-vpc": {
+            "$ref": "x-vpc.spec.json"
+        },
+        "x-tags": {
+            "type": [
+                "array",
+                "object"
+            ]
+        },
+        "x-dns": {
+            "type": "object"
+        },
         "version": {
             "type": "string",
             "description": "Version of the Compose specification used. Tools not implementing required version MUST reject the configuration file."

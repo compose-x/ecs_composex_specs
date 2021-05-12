@@ -2,15 +2,13 @@
 
 """Tests for `ecs_composex_specs` package."""
 
-from os import path
-import pytest
-import yaml
-from yaml import Loader
-from importlib_resources import files
-import jsonschema
 from json import loads
+from os import path
 
-from ecs_composex_specs import ecs_composex_specs
+import jsonschema
+import yaml
+from importlib_resources import files
+from yaml import Loader
 
 
 def test_valid_schema():
@@ -19,9 +17,11 @@ def test_valid_schema():
     :return:
     """
 
-    with open(f"{path.abspath(path.dirname(__file__))}/blog.features.yml", "r") as content_fd:
+    with open(
+        f"{path.abspath(path.dirname(__file__))}/blog.features.yml", "r"
+    ) as content_fd:
         content = yaml.load(content_fd.read(), Loader=Loader)
-    print(content)
+    print(content["x-vpc"])
 
     source = files("ecs_composex_specs").joinpath("compose-spec.json")
     print(source)
