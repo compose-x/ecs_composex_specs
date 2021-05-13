@@ -17,7 +17,7 @@
             ],
             "properties": {
                 "Lookup": {
-                    "$ref": "x-resources.common.spec.json#/definitions/Lookup"
+                    "type": "string"
                 },
                 "Name": {
                     "$ref": "#/definitions/ZoneName"
@@ -35,7 +35,7 @@
             ],
             "properties": {
                 "Lookup": {
-                    "$ref": "x-resources.common.spec.json#/definitions/Lookup"
+                    "type": "string"
                 },
                 "Name": {
                     "$ref": "#/definitions/ZoneName"
