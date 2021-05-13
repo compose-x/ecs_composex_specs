@@ -6,27 +6,17 @@ ECS Compose-X Specs
 .. image:: https://img.shields.io/pypi/v/ecs_composex_specs.svg
         :target: https://pypi.python.org/pypi/ecs_composex_specs
 
-.. image:: https://img.shields.io/travis/johnpreston/ecs_composex_specs.svg
-        :target: https://travis-ci.com/johnpreston/ecs_composex_specs
-
-.. image:: https://readthedocs.org/projects/ecs-composex-specs/badge/?version=latest
-        :target: https://ecs-composex-specs.readthedocs.io/en/latest/?version=latest
+.. image:: https://readthedocs.org/projects/compose-x-specs/badge/?version=latest
+        :target: https://compose-x-specs.readthedocs.io/en/latest/?version=latest
         :alt: Documentation Status
 
 
-
-
-Specifications for ECS Compose-X
+Specifications for ECS Compose-X.
 
 
 * Free software: MPL2.0
 * Documentation: https://ecs-composex-specs.readthedocs.io.
 
-
-Features
---------
-
-* TODO
 
 Credits
 -------
