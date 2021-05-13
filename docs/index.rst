@@ -8,6 +8,7 @@ Welcome to ECS Compose-X Specs's documentation!
    readme
    installation
    usage
+   schemas
    modules
    contributing
    authors
