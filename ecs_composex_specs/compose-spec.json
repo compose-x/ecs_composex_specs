@@ -16,10 +16,22 @@
             "$ref": "x-dns.spec.json"
         },
         "x-cluster": {
-            "$ref": "x-ecs.spec.json"
+            "$ref": "x-cluster.spec.json"
         },
         "x-elbv2": {
-            "$ref": "x-elbv2.spec.json"
+            "patternProperties": {
+                "^[a-zA-Z0-9._-]+$": {
+                    "$ref": "x-elbv2.spec.json"
+                }
+            }
+        },
+        "x-s3": {
+            "type": "object",
+            "patternProperties": {
+                "^[a-zA-Z0-9._-]+$": {
+                    "$ref": "x-s3.spec.json"
+                }
+            }
         },
         "version": {
             "type": "string",
@@ -1370,6 +1382,9 @@
                 },
                 "template_driver": {
                     "type": "string"
+                },
+                "x-secrets": {
+                    "$ref": "secrets.x-secrets.spec.json"
                 }
             },
             "additionalProperties": false,

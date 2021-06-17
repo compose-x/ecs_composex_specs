@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "x-elbv2.common.spec.json",
+    "$id": "x-elbv2.spec.json",
     "type": "object",
     "title": "x-elbv2",
     "description": "The specifications of x-elbv2 in ComposeX",

@@ -1,9 +1,9 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "id": "x-ecs.spec.json",
-    "$id": "x-ecs.spec.json",
-    "title": "x-ecs",
-    "description": "x-ecs specification",
+    "id": "x-cluster.spec.json",
+    "$id": "x-cluster.spec.json",
+    "title": "x-cluster",
+    "description": "x-cluster specification for ECS Cluster",
     "type": "object",
     "properties": {
         "Lookup": {
@@ -13,7 +13,8 @@
             "type": "string"
         },
         "Properties": {
-            "type": "object"
+            "type": "object",
+            "description": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-cluster.html"
         }
     },
     "oneOf": [

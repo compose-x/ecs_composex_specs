@@ -35,13 +35,46 @@
                         "Statement": {
                             "type": "array",
                             "items": {
-                                "type": "object"
+                                "$ref": "#/definitions/Statement"
                             }
                         },
                         "Version": {
                             "type": "string"
                         }
                     }
+                }
+            }
+        },
+        "Statement": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+                "Sid": {
+                    "type": "string"
+                },
+                "Action": {
+                    "type": [
+                        "array",
+                        "string"
+                    ]
+                },
+                "Principal": {
+                    "type": "object"
+                },
+                "Effect": {
+                    "type": "string"
+                },
+                "Resource": {
+                    "type": [
+                        "array",
+                        "string"
+                    ]
+                },
+                "Conditions": {
+                    "type": [
+                        "string",
+                        "object"
+                    ]
                 }
             }
         }
