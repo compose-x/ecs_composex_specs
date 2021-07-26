@@ -33,6 +33,15 @@
                 }
             }
         },
+        "x-cognito_userpool": {
+            "type": "object",
+            "description": "Allows definition of AWS Cognito Userpool (Lookup only)",
+            "patternProperties": {
+                "^[a-zA-Z0-9._-]+$": {
+                    "$ref": "x-cognito_userpool.spec.json"
+                }
+            }
+        },
         "version": {
             "type": "string",
             "description": "Version of the Compose specification used. Tools not implementing required version MUST reject the configuration file."
