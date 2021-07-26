@@ -10,6 +10,7 @@
         },
         "MacroParameters": {
             "type": "object",
+            "additionalProperties": true,
             "properties": {
                 "Ingress": {
                     "$ref": "ingress.spec.json"
@@ -71,8 +72,20 @@
                 "access": {
                     "type": "string"
                 },
+                "CreateCognitoClient": {
+                    "type": "object",
+                    "additionalProperties": true,
+                    "required": ["UserPoolId"],
+                    "description": "Allows to create a new UserPool Client when using AuthenticateCognitoConfig and x-cognito_userpool",
+                    "properties": {
+                        "UserPoolId": {
+                            "type": "string"
+                        }
+                    }
+                },
                 "AuthenticateCognitoConfig": {
-                    "type": "object"
+                    "type": "object",
+                    "description": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-authenticatecognitoconfig.html"
                 },
                 "AuthenticateOidcConfig": {
                     "type": "object"
