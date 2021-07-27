@@ -33,6 +33,14 @@
                 }
             }
         },
+        "x-dashboards": {
+            "type": "object",
+            "patternProperties": {
+                "^[a-zA-Z0-9._-]+$": {
+                    "$ref": "x-dashboards.spec.json"
+                }
+            }
+        },
         "x-cognito_userpool": {
             "type": "object",
             "description": "Allows definition of AWS Cognito Userpool (Lookup only)",
