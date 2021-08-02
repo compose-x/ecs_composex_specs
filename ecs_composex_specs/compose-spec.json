@@ -134,6 +134,9 @@
                 "x-codeguru_profiler": {
                     "$ref": "services.x-codeguru_profiler.spec.json"
                 },
+                "x-ecr": {
+                    "$ref": "services.x-ecr.spec.json"
+                },
                 "deploy": {
                     "$ref": "#/definitions/deployment"
                 },
