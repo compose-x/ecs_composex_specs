@@ -9,6 +9,14 @@
     "properties": {
         "VulnerabilitiesScan": {
             "$ref": "#/definitions/ScanDef"
+        },
+        "RoleArn": {
+            "type": "string",
+            "description": "A role ARN to use for assume role for subsequent API calls to ECR"
+        },
+        "InterpolateWithDigest": {
+            "type": "boolean",
+            "description": "When true, replaces the image tag with the image digest"
         }
     },
     "definitions": {
@@ -22,7 +30,10 @@
                 },
                 "TreatFailedAs": {
                     "type": "string",
-                    "enum": ["Success", "Failure"],
+                    "enum": [
+                        "Success",
+                        "Failure"
+                    ],
                     "description": "For images where scan was failed, ignore failure?"
                 },
                 "Thresholds": {
@@ -31,13 +42,13 @@
                         "CRITICAL": {
                             "$ref": "#/definitions/ThresholdDef"
                         },
-                         "HIGH": {
+                        "HIGH": {
                             "$ref": "#/definitions/ThresholdDef"
                         },
-                         "MEDIUM": {
+                        "MEDIUM": {
                             "$ref": "#/definitions/ThresholdDef"
                         },
-                         "LOW": {
+                        "LOW": {
                             "$ref": "#/definitions/ThresholdDef"
                         }
                     }
