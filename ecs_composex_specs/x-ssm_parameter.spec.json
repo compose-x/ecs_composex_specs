@@ -16,15 +16,44 @@
             "type": "object",
             "description": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-parameter.html"
         },
-        "Settings" : {
+        "Settings": {
             "$ref": "x-resources.common.spec.json#/definitions/Settings"
         },
         "MacroParameters": {
             "type": "object",
+            "additionalProperties": false,
             "properties": {
                 "FromFile": {
                     "type": "string",
                     "description": "Path to the file to read the content of and set as Value"
+                },
+                "ValidateJson": {
+                    "type": "boolean",
+                    "description": "Whether or not the content should be a valid JSON"
+                },
+                "MinimizeJson": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "When set to yes, will load are dump JSON string without indentation"
+                },
+                "IgnoreInvalidJson": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "If the JSON encoding failed, allows to ignore and use default content"
+                },
+                "ValidateYaml": {
+                    "type": "boolean",
+                    "description": "Whether or not the content should be a valid Yaml"
+                },
+                "RenderToJson": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "When set to yes, will transform the object loaded in YAML and set it into JSON"
+                },
+                "IgnoreInvalidYaml": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "If the Yaml encoding failed, allows to ignore and use default content"
                 }
             }
         },
