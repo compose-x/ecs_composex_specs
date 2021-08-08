@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "ecs_composex_specs"
-version = "0.0.8"
+version = "0.0.9"
 description = "JSON Schema Specifications for ECS Compose-X"
 authors = ["John Preston <john@compose-x.io>"]
 license = "MPL-2.0"
@@ -43,7 +43,7 @@ build-backend = "poetry.core.masonry.api"
 github_url = "https://github.com/compose-x/ecs_composex_specs"
 
 [tool.tbump.version]
-current = "0.0.8"
+current = "0.0.9"
 
 regex = '''
   (?P<major>\d+)
