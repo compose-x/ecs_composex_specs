@@ -19,15 +19,11 @@ def test_x_efs_create():
     :return:
     """
 
-    with open(
-        f"{path.abspath(path.dirname(__file__))}/x_efs/create.yml", "r"
-    ) as content_fd:
+    with open(f"{path.abspath(path.dirname(__file__))}/x_efs/create.yml", "r") as content_fd:
         content = yaml.load(content_fd.read(), Loader=Loader)
 
     source = files("ecs_composex_specs").joinpath("compose-spec.json")
-    resolver = jsonschema.RefResolver(
-        f"file://{path.abspath(path.dirname(source))}/", None
-    )
+    resolver = jsonschema.RefResolver(f"file://{path.abspath(path.dirname(source))}/", None)
     jsonschema.validate(
         content,
         loads(source.read_text()),

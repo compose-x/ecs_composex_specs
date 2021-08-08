@@ -19,17 +19,13 @@ def test_x_vpc_lookup():
     :return:
     """
 
-    with open(
-        f"{path.abspath(path.dirname(__file__))}/x_vpc/lookup.yml", "r"
-    ) as content_fd:
+    with open(f"{path.abspath(path.dirname(__file__))}/x_vpc/lookup.yml", "r") as content_fd:
         content = yaml.load(content_fd.read(), Loader=Loader)
     print(content)
 
     source = files("ecs_composex_specs").joinpath("x-vpc.spec.json")
     print(source)
-    resolver = jsonschema.RefResolver(
-        f"file://{path.abspath(path.dirname(source))}/", None
-    )
+    resolver = jsonschema.RefResolver(f"file://{path.abspath(path.dirname(source))}/", None)
     jsonschema.validate(
         content["x-vpc"],
         loads(source.read_text()),
@@ -43,17 +39,13 @@ def test_x_vpc_lookup_invalid():
     :return:
     """
 
-    with open(
-        f"{path.abspath(path.dirname(__file__))}/x_vpc/invalid_lookup.yml", "r"
-    ) as content_fd:
+    with open(f"{path.abspath(path.dirname(__file__))}/x_vpc/invalid_lookup.yml", "r") as content_fd:
         content = yaml.load(content_fd.read(), Loader=Loader)
     print(content)
 
     source = files("ecs_composex_specs").joinpath("x-vpc.spec.json")
     print(source)
-    resolver = jsonschema.RefResolver(
-        f"file://{path.abspath(path.dirname(source))}/", None
-    )
+    resolver = jsonschema.RefResolver(f"file://{path.abspath(path.dirname(source))}/", None)
     with pytest.raises(jsonschema.exceptions.ValidationError):
         jsonschema.validate(
             content["x-vpc"],
@@ -68,15 +60,11 @@ def test_x_vpc_create():
     :return:
     """
 
-    with open(
-        f"{path.abspath(path.dirname(__file__))}/x_vpc/create.yml", "r"
-    ) as content_fd:
+    with open(f"{path.abspath(path.dirname(__file__))}/x_vpc/create.yml", "r") as content_fd:
         content = yaml.load(content_fd.read(), Loader=Loader)
 
     source = files("ecs_composex_specs").joinpath("x-vpc.spec.json")
-    resolver = jsonschema.RefResolver(
-        f"file://{path.abspath(path.dirname(source))}/", None
-    )
+    resolver = jsonschema.RefResolver(f"file://{path.abspath(path.dirname(source))}/", None)
     jsonschema.validate(
         content["x-vpc"],
         loads(source.read_text()),
@@ -90,15 +78,11 @@ def test_x_vpc_use():
     :return:
     """
 
-    with open(
-        f"{path.abspath(path.dirname(__file__))}/x_vpc/use.yml", "r"
-    ) as content_fd:
+    with open(f"{path.abspath(path.dirname(__file__))}/x_vpc/use.yml", "r") as content_fd:
         content = yaml.load(content_fd.read(), Loader=Loader)
 
     source = files("ecs_composex_specs").joinpath("x-vpc.spec.json")
-    resolver = jsonschema.RefResolver(
-        f"file://{path.abspath(path.dirname(source))}/", None
-    )
+    resolver = jsonschema.RefResolver(f"file://{path.abspath(path.dirname(source))}/", None)
     jsonschema.validate(
         content["x-vpc"],
         loads(source.read_text()),
