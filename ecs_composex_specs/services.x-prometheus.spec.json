@@ -10,6 +10,11 @@
         "ContainersInsights": {
             "type": "object",
             "properties": {
+                "EnableCWAgentDebug": {
+                    "type": "boolean",
+                    "description": "Whether or not enable debug mode for the CloudWatch agent",
+                    "default": false
+                },
                 "EnableTasksDiscovery": {
                     "type": "boolean",
                     "default": false,
