@@ -2,26 +2,11 @@
 ECS Compose-X Specs
 ===================
 
+`Specifications for ECS Compose-X.`_
 
-.. image:: https://img.shields.io/pypi/v/ecs_composex_specs.svg
-        :target: https://pypi.python.org/pypi/ecs_composex_specs
+Visit the `Compose-X repositories on GitHub`_, `use-cases walkthroughs`_ and the `blog`_
 
-.. image:: https://readthedocs.org/projects/compose-x-specs/badge/?version=latest
-        :target: https://compose-x-specs.readthedocs.io/en/latest/?version=latest
-        :alt: Documentation Status
-
-
-Specifications for ECS Compose-X.
-
-
-* Free software: MPL2.0
-* Documentation: https://ecs-composex-specs.readthedocs.io.
-
-
-Credits
--------
-
-This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
-
-.. _Cookiecutter: https://github.com/audreyr/cookiecutter
-.. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+.. _Specifications for ECS Compose-X.: https://ecs-composex-specs.compose-x.io
+.. _Compose-X repositories on GitHub: https://github.com/compose-x
+.. _use-cases walkthroughs: https://labs.compose-x.io
+.. _blog: https://blog.compose-x.io

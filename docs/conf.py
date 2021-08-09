@@ -84,30 +84,58 @@ todo_include_todos = False
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-import sphinx_rtd_theme
+import sphinx_material
 
 extensions += [
     "sphinx.ext.todo",
     "sphinx.ext.viewcode",
     "sphinx.ext.autodoc",
-    "sphinx_rtd_theme",
-    "sphinx_sitemap",
 ]
 
-sitemap_locales = ["en"]
-html_theme = "sphinx_rtd_theme"
-# html_theme = 'alabaster'
+autosummary_generate = True
+autoclass_content = "class"
 
+sitemap_locales = ["en"]
+html_baseurl = "https://ecs-composex-specs.composex.io"
+
+extensions.append("sphinx_material")
+html_theme_path = sphinx_material.html_theme_path()
+html_context = sphinx_material.get_html_context()
+html_theme = "sphinx_material"
 # Theme options are theme-specific and customize the look and feel of a
 # theme further.  For a list of options available for each theme, see the
 # documentation.
 #
-# html_theme_options = {}
-
+html_theme_options = {
+    # Set the name of the project to appear in the navigation.
+    "nav_title": "ECS Compose-X JSON Specifications",
+    # Set you GA account ID to enable tracking
+    # 'google_analytics_account': 'UA-XXXXX',
+    # Specify a base_url used to generate sitemap.xml. If not
+    # specified, then no sitemap will be built.
+    "base_url": html_baseurl,
+    "html_minify": False,
+    "html_prettify": True,
+    "css_minify": True,
+    # Set the color and the accent color
+    "color_primary": "blue",
+    "color_accent": "light-blue",
+    # Set the repo location to get a badge with stats
+    "repo_url": "https://github.com/compose-x/ecs_composex_specs/",
+    "repo_name": "compose-x/ecs_composex_specs",
+    "repo_type": "github",
+    # Visible levels of the global TOC; -1 means unlimited
+    "globaltoc_depth": 2,
+    # If False, expand all TOC entries
+    "globaltoc_collapse": True,
+    # If True, show hidden TOC entries
+    "globaltoc_includehidden": False,
+}
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ["_static"]
+html_sidebars = {"**": ["logo-text.html", "globaltoc.html", "localtoc.html", "searchbox.html"]}
 
 
 # -- Options for HTMLHelp output ---------------------------------------
@@ -151,9 +179,7 @@ latex_documents = [
 
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
-man_pages = [
-    (master_doc, "ecs_composex_specs", "ECS Compose-X Specs Documentation", [author], 1)
-]
+man_pages = [(master_doc, "ecs_composex_specs", "ECS Compose-X Specs Documentation", [author], 1)]
 
 
 # -- Options for Texinfo output ----------------------------------------

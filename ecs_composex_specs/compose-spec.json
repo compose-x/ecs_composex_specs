@@ -18,6 +18,13 @@
         "x-cluster": {
             "$ref": "x-cluster.spec.json"
         },
+        "x-acm": {
+            "patternProperties": {
+                "^[a-zA-Z0-9._-]+$": {
+                    "$ref": "x-acm.spec.json"
+                }
+            }
+        },
         "x-elbv2": {
             "patternProperties": {
                 "^[a-zA-Z0-9._-]+$": {
