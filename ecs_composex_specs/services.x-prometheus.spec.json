@@ -15,21 +15,35 @@
                     "description": "Whether or not enable debug mode for the CloudWatch agent",
                     "default": false
                 },
-                "EnableTasksDiscovery": {
-                    "type": "boolean",
-                    "default": false,
-                    "description": "Whether or not do ECS Tasks service discovery via ECS API"
-                },
                 "CollectForAppmesh": {
                     "type": "boolean",
                     "description": "Automatically adds envoy EMF Processor"
                 },
                 "CollectForJavaJmx": {
-                    "type": "boolean",
-                    "description": "Automatically adds JavaJMX/Catalina EMF Processor"
+                    "oneOf": [
+                        {
+                            "$ref": "#/definitions/ExporterConfig"
+                        },
+                        {
+                            "type": "boolean",
+                            "description": "Automatically adds JavaJMX/Catalina EMF Processor"
+                        }
+                    ]
                 },
                 "CollectForNginx": {
-                    "type": "boolean"
+                    "oneOf": [
+                        {
+                            "type": "boolean"
+                        },
+                        {
+                            "$ref": "#/definitions/ExporterConfig"
+                        }
+                    ]
+                },
+                "AutoAddNginxPrometheusExporter": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "If true, ECS Compose-X will automatically add nginx-prometheus-exporter sidecar. Requires CollectForNginx or CollectForNginxPlus to be true"
                 },
                 "CollectForNginxPlus": {
                     "type": "boolean"
@@ -44,6 +58,34 @@
         }
     },
     "definitions": {
+        "ExporterConfig": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ExporterPort": {
+                    "type": "number",
+                    "minimum": 0,
+                    "description": "Prometheus Exporter port"
+                },
+                "ExporterPath": {
+                    "type": "string",
+                    "description": "Override path for metrics collection",
+                    "default": "/metrics",
+                    "pattern": "^/[\\x00-\\x7F]+$"
+                },
+                "source_labels": {
+                    "description": "List of docker labels to match tne container to scrape for metrics",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "label_matcher": {
+                    "type": "string",
+                    "description": "Regular expression to of values to match the source_labels against"
+                }
+            }
+        },
         "CustomRuleDef": {
             "type": "object",
             "required": [
