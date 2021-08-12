@@ -3,7 +3,7 @@
     "id": "services.x-ecr",
     "$id": "services.x-ecr.spec.json",
     "type": "object",
-    "title": "services.x-iam specification",
+    "title": "services.x-ecr specification",
     "description": "The services.x-ecr specification for ComposeX",
     "additionalProperties": false,
     "properties": {

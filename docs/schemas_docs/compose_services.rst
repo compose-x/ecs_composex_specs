@@ -10,3 +10,4 @@
     schemas_docs/services/x_alarms
     schemas_docs/services/x_prometheus
     schemas_docs/services/x_codeguru_profiler
+    schemas_docs/services/x_docker_opts
