@@ -49,10 +49,7 @@
                     "type": "boolean"
                 },
                 "CustomRules": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/CustomRulesDef"
-                    }
+                    "$ref": "#/definitions/CustomRulesDef"
                 }
             }
         }
@@ -104,13 +101,13 @@
                     "EmfProcessors": {
                         "type": "array",
                         "items": {
-                            "$ref": "#/definitions/CustomRuleDef"
+                            "$ref": "#/definitions/EmfProcessorDef"
                         }
                     }
                 }
             }
         },
-        "CustomRuleDef": {
+        "EmfProcessorDef": {
             "type": "object",
             "required": [
                 "source_labels",
