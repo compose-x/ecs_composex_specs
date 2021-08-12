@@ -51,7 +51,7 @@
                 "CustomRules": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/CustomRuleDef"
+                        "$ref": "#/definitions/CustomRulesDef"
                     }
                 }
             }
@@ -83,6 +83,30 @@
                 "label_matcher": {
                     "type": "string",
                     "description": "Regular expression to of values to match the source_labels against"
+                }
+            }
+        },
+        "CustomRulesDef": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "required": [
+                    "EmfProcessors",
+                    "ExporterPort"
+                ],
+                "properties": {
+                    "ExporterPort": {
+                        "$ref": "#/definitions/ExporterConfig/properties/ExporterPort"
+                    },
+                    "ExporterPath": {
+                        "$ref": "#/definitions/ExporterConfig/properties/ExporterPath"
+                    },
+                    "EmfProcessors": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/definitions/CustomRuleDef"
+                        }
+                    }
                 }
             }
         },
