@@ -40,6 +40,14 @@
                 }
             }
         },
+        "x-alarms": {
+            "type": "object",
+            "patternProperties": {
+                "^[a-zA-Z0-9._-]+$": {
+                    "$ref": "x-alarms.spec.json"
+                }
+            }
+        },
         "x-dashboards": {
             "type": "object",
             "patternProperties": {
@@ -153,7 +161,7 @@
                     "$ref": "services.x-ecr.spec.json"
                 },
                 "x-docker_opts": {
-                  "$ref": "services.x-docker_opts.spec.json"
+                    "$ref": "services.x-docker_opts.spec.json"
                 },
                 "x-prometheus": {
                     "$ref": "services.x-prometheus.spec.json"
