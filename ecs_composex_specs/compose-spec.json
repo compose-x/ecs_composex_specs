@@ -73,6 +73,62 @@
         }
       }
     },
+    "x-dynamodb": {
+      "type": "object",
+      "patternProperties": {
+        "^[a-zA-Z0-9._-]+$": {
+          "$ref": "x-dynamodb.spec.json"
+        }
+      }
+    },
+    "x-kinesis": {
+      "type": "object",
+      "patternProperties": {
+        "^[a-zA-Z0-9._-]+$": {
+          "$ref": "x-kinesis.spec.json"
+        }
+      }
+    },
+    "x-sqs": {
+      "type": "object",
+      "patternProperties": {
+        "^[a-zA-Z0-9._-]+$": {
+          "$ref": "x-sqs.spec.json"
+        }
+      }
+    },
+    "x-kms": {
+      "type": "object",
+      "patternProperties": {
+        "^[a-zA-Z0-9._-]+$": {
+          "$ref": "x-kms.spec.json"
+        }
+      }
+    },
+    "x-rds": {
+      "type": "object",
+      "patternProperties": {
+        "^[a-zA-Z0-9._-]+$": {
+          "$ref": "x-rds.spec.json"
+        }
+      }
+    },
+    "x-docdb": {
+      "type": "object",
+      "patternProperties": {
+        "^[a-zA-Z0-9._-]+$": {
+          "$ref": "x-docdb.spec.json"
+        }
+      }
+    },
+    "x-events": {
+      "type": "object",
+      "patternProperties": {
+        "^[a-zA-Z0-9._-]+$": {
+          "$ref": "x-events.spec.json"
+        }
+      }
+    },
     "version": {
       "type": "string",
       "description": "Version of the Compose specification used. Tools not implementing required version MUST reject the configuration file."
