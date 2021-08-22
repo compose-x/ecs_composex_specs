@@ -11,10 +11,18 @@ ECS Compose-X JSON Specifications
     schemas_docs/x_elbv2
     schemas_docs/x_vpc
     schemas_docs/x_dns
+    schemas_docs/x_rds
+    schemas_docs/x_docdb
     schemas_docs/x_efs
     schemas_docs/x_ecs
     schemas_docs/x_dashboards
     schemas_docs/x_cognito_userpool
+    schemas_docs/x_sqs
+    schemas_docs/x_kinesis
+    schemas_docs/x_alarms
+    schemas_docs/x_ssm_parameter
+    schemas_docs/x_events
+
 
 .. include:: schemas_docs/compose_services.rst
 

@@ -6,6 +6,8 @@
     schemas_docs/services/x_iam
     schemas_docs/services/x_network
     schemas_docs/services/x_scaling
+    schemas_docs/services/x_ecs
+    schemas_docs/services/x_ecr
     schemas_docs/services/x_logging
     schemas_docs/services/x_alarms
     schemas_docs/services/x_prometheus
