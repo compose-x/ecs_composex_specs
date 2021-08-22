@@ -1,29 +1,35 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "id": "services.x-cluster",
-  "$id": "services.x-cluster.spec.json",
+  "id": "services.x-ecs",
+  "$id": "services.x-ecs.spec.json",
   "type": "object",
-  "title": "services.x-cluster specification",
-  "description": "The services.x-cluster specification for ComposeX",
+  "title": "services.x-ecs specification",
+  "description": "The services.x-ecs specification for ComposeX",
   "properties": {
-    "EnableEcsCommand": {
-      "type": "boolean"
+    "EnableExecuteCommand": {
+      "type": "boolean",
+      "description": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-enableexecutecommand"
     },
-    "AccessConditions": {
-      "type": "object",
-      "description": "Series of predefined conditions to automatically add",
-      "properties": {
-        "LimitToEcsCluster": {
-          "type": "boolean",
-          "default": true,
-          "description": "Whether or not IAM task policy should limit to current ECS Cluster"
-        }
-      }
-    },
-    "Policies": {
+    "CapacityProviderStrategy": {
       "type": "array",
       "items": {
-        "$ref": "services.x-iam.spec.json#/definitions/PolicyDef"
+        "type": "object",
+        "properties": {
+          "Base": {
+            "type": "number",
+            "default": 0,
+            "description": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-capacityproviderstrategyitem.html#cfn-ecs-service-capacityproviderstrategyitem-base"
+          },
+          "Weight": {
+            "type": "number",
+            "description": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-capacityproviderstrategyitem.html#cfn-ecs-service-capacityproviderstrategyitem-weight",
+            "default": 0
+          },
+          "CapacityProvider": {
+            "type": "string",
+            "description": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-capacityproviderstrategyitem.html#cfn-ecs-service-capacityproviderstrategyitem-capacityprovider"
+          }
+        }
       }
     }
   }

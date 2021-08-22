@@ -222,6 +222,9 @@
         "x-prometheus": {
           "$ref": "services.x-prometheus.spec.json"
         },
+        "x-ecs": {
+          "$ref": "services.x-ecs.spec.json"
+        },
         "deploy": {
           "$ref": "#/definitions/deployment"
         },
