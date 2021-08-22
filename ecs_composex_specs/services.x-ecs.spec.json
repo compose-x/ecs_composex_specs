@@ -14,16 +14,24 @@
       "type": "array",
       "items": {
         "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "CapacityProvider"
+        ],
         "properties": {
           "Base": {
             "type": "number",
             "default": 0,
+            "minimum": 0,
+            "maximum": 100000,
             "description": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-capacityproviderstrategyitem.html#cfn-ecs-service-capacityproviderstrategyitem-base"
           },
           "Weight": {
             "type": "number",
             "description": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-capacityproviderstrategyitem.html#cfn-ecs-service-capacityproviderstrategyitem-weight",
-            "default": 0
+            "default": 0,
+            "minimum": 0,
+            "maximum": 1000
           },
           "CapacityProvider": {
             "type": "string",
