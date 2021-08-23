@@ -7,7 +7,25 @@
   "type": "object",
   "properties": {
     "Lookup": {
-      "type": "string"
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "object",
+          "required": [
+            "ClusterName"
+          ],
+          "properties": {
+            "ClusterName": {
+              "type": "string"
+            },
+            "RoleArn": {
+              "$ref": "x-resources.common.spec.json#/definitions/Lookup/properties/RoleArn"
+            }
+          }
+        }
+      ]
     },
     "Use": {
       "type": "string"
