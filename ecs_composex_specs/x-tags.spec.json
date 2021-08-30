@@ -7,14 +7,34 @@
   "oneOf": [
     {
       "type": "object",
-      "items": {
-        "type": "object"
+      "patternProperties": {
+        "[\\x20-\\x7E]+": {
+          "type": "string",
+          "minLength": 0,
+          "maxLength": 256
+        }
       }
     },
     {
       "type": "array",
       "items": {
-        "type": "object"
+        "type": "object",
+        "required": [
+          "Key",
+          "Value"
+        ],
+        "properties": {
+          "Key": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "Value": {
+            "type": "string",
+            "minLength": 0,
+            "maxLength": 256
+          }
+        }
       }
     }
   ]
