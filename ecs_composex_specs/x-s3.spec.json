@@ -30,7 +30,7 @@
     "ServicesAccess": {
       "type": "object",
       "properties": {
-        "s3-bucket-ssl-requests-only": {
+        "enforceSecureConnection": {
           "type": "boolean",
           "description": "Whether or not to auto-add an IAM policy that denies query not over TLS",
           "default": false
