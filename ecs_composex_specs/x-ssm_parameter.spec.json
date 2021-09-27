@@ -54,6 +54,11 @@
           "type": "boolean",
           "default": false,
           "description": "If the Yaml encoding failed, allows to ignore and use default content"
+        },
+        "EncodeToBase64": {
+          "type": "boolean",
+          "description": "Whether the content should be encoded to base64",
+          "default": false
         }
       }
     },
