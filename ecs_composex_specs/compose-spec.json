@@ -15,6 +15,9 @@
     "x-dns": {
       "$ref": "x-dns.spec.json"
     },
+    "x-appmesh": {
+      "$ref": "x-appmesh.spec.json"
+    },
     "x-cluster": {
       "$ref": "x-cluster.spec.json"
     },
