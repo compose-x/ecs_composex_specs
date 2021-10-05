@@ -25,12 +25,20 @@
   "definitions": {
     "PolicyDef": {
       "type": "object",
+      "required": [
+        "PolicyDocument",
+        "PolicyName"
+      ],
       "properties": {
         "PolicyName": {
           "type": "string"
         },
         "PolicyDocument": {
           "type": "object",
+          "required": [
+            "Statement",
+            "Version"
+          ],
           "properties": {
             "Statement": {
               "type": "array",
@@ -39,7 +47,9 @@
               }
             },
             "Version": {
-              "type": "string"
+              "type": "string",
+              "enum": ["2012-10-17", "2008-10-17"],
+              "description": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_version.html"
             }
           }
         }
@@ -59,10 +69,12 @@
           ]
         },
         "Principal": {
-          "type": "object"
+          "type": ["object", "string"]
         },
         "Effect": {
-          "type": "string"
+          "type": "string",
+          "description": "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_effect.html",
+          "enum": ["Allow", "Deny"]
         },
         "Resource": {
           "type": [

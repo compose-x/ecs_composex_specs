@@ -19,6 +19,32 @@
     "Settings": {
       "$ref": "x-resources.common.spec.json#/definitions/Settings"
     },
+    "MacroParameters": {
+      "type": "object",
+      "properties": {
+        "BucketPolicy": {
+          "type": "object",
+          "properties": {
+            "Statement": {
+              "type": "array",
+              "items": {
+                "$ref": "services.x-iam.spec.json#/definitions/Statement"
+              }
+            },
+            "PredefinedBucketPolicies": {
+              "type": "array",
+              "uniqueItems": true,
+              "items": {
+                "type": "string",
+                "enum": [
+                  "enforceSecureConnection"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
     "Services": {
       "type": "array",
       "items": {
